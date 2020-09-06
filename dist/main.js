@@ -437,10 +437,10 @@
     			button = element("button");
     			t0 = text("Count is ");
     			t1 = text(/*$count*/ ctx[0]);
-    			attr_dev(button, "class", "button svelte-12ha7n3");
-    			add_location(button, file, 15, 2, 603);
+    			attr_dev(button, "class", "button svelte-xldqhi");
+    			add_location(button, file, 18, 2, 398);
     			attr_dev(div, "class", "flex items-center justify-center h-screen bg-gray-200");
-    			add_location(div, file, 14, 0, 532);
+    			add_location(div, file, 17, 0, 327);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -607,7 +607,7 @@
     			t = space();
     			create_component(helloworld.$$.fragment);
     			attr_dev(main, "class", "overflow-hidden");
-    			add_location(main, file$1, 12, 0, 323);
+    			add_location(main, file$1, 11, 0, 280);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -681,7 +681,7 @@
     }
 
     const app = new App({
-      target: document.body
+      target: document.body,
     });
 
 }());
