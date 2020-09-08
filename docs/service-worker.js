@@ -2,9 +2,9 @@ var cacheName = "sgtoilet-cache-" + Date.now();
 var filesToCache = [
   "/",
   "/index.html",
-  "/main.css",
   "/main.js",
-  "/components.css"
+  "/components.css",
+  "/tailwind.css"
 ];
 self.addEventListener("install", function(e) {
   e.waitUntil(

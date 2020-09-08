@@ -5,8 +5,9 @@
 	import CreateSharedBill from './components/CreateSharedBill.svelte';
 	import Router, {link} from 'svelte-spa-router';
 
+	console.log(__myapp.env.BASE_URL);
 	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('/service-worker.js');
+		navigator.serviceWorker.register(__myapp.env.BASE_URL + '/service-worker.js');
 	}
 
 	const routes = {

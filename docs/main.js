@@ -30618,12 +30618,12 @@
     const count = writable$1('count', 0);
 
     const oauth2 = new jsforce.OAuth2({
-        loginUrl : 'https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com',
-        clientId : '3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM',
-        clientSecret : '1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C',
-        redirectUri : 'https://lucam75.github.io/shared-bills-svelte-pwa/#/token',
-        version: '49.0',
-        proxyUrl: 'https://shared-bills-proxy.herokuapp.com/proxy'
+        loginUrl : {"env":{"isProd":false,"LOGIN_URL":"https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com","CLIENT_ID":"3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM","CLIENT_SECRET":"1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C","REDIRECT_URI":"http://localhost:5000/#/token","API_VERSION":"49.0","PROXY_URL":"https://shared-bills-proxy.herokuapp.com/prox","BASE_URL":"http://localhost:5000"}}.env.LOGIN_URL,
+        clientId : {"env":{"isProd":false,"LOGIN_URL":"https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com","CLIENT_ID":"3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM","CLIENT_SECRET":"1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C","REDIRECT_URI":"http://localhost:5000/#/token","API_VERSION":"49.0","PROXY_URL":"https://shared-bills-proxy.herokuapp.com/prox","BASE_URL":"http://localhost:5000"}}.env.CLIENT_ID,
+        clientSecret : {"env":{"isProd":false,"LOGIN_URL":"https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com","CLIENT_ID":"3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM","CLIENT_SECRET":"1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C","REDIRECT_URI":"http://localhost:5000/#/token","API_VERSION":"49.0","PROXY_URL":"https://shared-bills-proxy.herokuapp.com/prox","BASE_URL":"http://localhost:5000"}}.env.CLIENT_SECRET,
+        redirectUri : {"env":{"isProd":false,"LOGIN_URL":"https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com","CLIENT_ID":"3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM","CLIENT_SECRET":"1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C","REDIRECT_URI":"http://localhost:5000/#/token","API_VERSION":"49.0","PROXY_URL":"https://shared-bills-proxy.herokuapp.com/prox","BASE_URL":"http://localhost:5000"}}.env.REDIRECT_URI,
+        version: {"env":{"isProd":false,"LOGIN_URL":"https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com","CLIENT_ID":"3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM","CLIENT_SECRET":"1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C","REDIRECT_URI":"http://localhost:5000/#/token","API_VERSION":"49.0","PROXY_URL":"https://shared-bills-proxy.herokuapp.com/prox","BASE_URL":"http://localhost:5000"}}.env.API_VERSION,
+        proxyUrl: {"env":{"isProd":false,"LOGIN_URL":"https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com","CLIENT_ID":"3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM","CLIENT_SECRET":"1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C","REDIRECT_URI":"http://localhost:5000/#/token","API_VERSION":"49.0","PROXY_URL":"https://shared-bills-proxy.herokuapp.com/prox","BASE_URL":"http://localhost:5000"}}.env.PROXY_URL
     });
 
     const sfConn = new jsforce.Connection({oauth2: oauth2});
@@ -31472,24 +31472,48 @@
 
     function create_fragment$2(ctx) {
     	let h1;
+    	let t1;
+    	let p0;
+    	let t4;
+    	let p1;
+    	let t5;
 
     	const block = {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "Token component";
-    			add_location(h1, file$1, 25, 0, 1093);
+    			t1 = space();
+    			p0 = element("p");
+    			p0.textContent = `Code: ${/*code*/ ctx[1]}`;
+    			t4 = space();
+    			p1 = element("p");
+    			t5 = text(/*message*/ ctx[0]);
+    			add_location(h1, file$1, 27, 0, 1076);
+    			add_location(p0, file$1, 28, 0, 1102);
+    			add_location(p1, file$1, 29, 0, 1123);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, p0, anchor);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, p1, anchor);
+    			append_dev(p1, t5);
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*message*/ 1) set_data_dev(t5, /*message*/ ctx[0]);
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h1);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(p0);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(p1);
     		}
     	};
 
@@ -31505,6 +31529,7 @@
     }
 
     function instance$2($$self, $$props, $$invalidate) {
+    	let message = "";
     	let urlParameters = new URLSearchParams(window.location.search);
     	let code = urlParameters.get("code");
     	console.log("code ", code);
@@ -31513,7 +31538,8 @@
     		console.log("sfConn.authorize ");
 
     		if (err) {
-    			return console.error("This error is in the auth callback: " + err);
+    			$$invalidate(0, message = err);
+    			return "";
     		}
 
     		console.log("Access Token: " + sfConn.accessToken);
@@ -31546,20 +31572,22 @@
     		refreshToken,
     		jsforce,
     		push,
+    		message,
     		urlParameters,
     		code
     	});
 
     	$$self.$inject_state = $$props => {
+    		if ("message" in $$props) $$invalidate(0, message = $$props.message);
     		if ("urlParameters" in $$props) urlParameters = $$props.urlParameters;
-    		if ("code" in $$props) code = $$props.code;
+    		if ("code" in $$props) $$invalidate(1, code = $$props.code);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [];
+    	return [message, code];
     }
 
     class Token extends SvelteComponentDev {
@@ -31579,7 +31607,7 @@
     /* src\components\Home.svelte generated by Svelte v3.24.1 */
     const file$2 = "src\\components\\Home.svelte";
 
-    // (10:0) {:else}
+    // (11:0) {:else}
     function create_else_block$1(ctx) {
     	let t;
 
@@ -31600,14 +31628,14 @@
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(10:0) {:else}",
+    		source: "(11:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (8:0) {#if userId != ''}
+    // (9:0) {#if userId != ''}
     function create_if_block$1(ctx) {
     	let h1;
     	let t0;
@@ -31618,7 +31646,7 @@
     			h1 = element("h1");
     			t0 = text("Logged as user ");
     			t1 = text(/*userId*/ ctx[0]);
-    			add_location(h1, file$2, 8, 5, 254);
+    			add_location(h1, file$2, 9, 5, 277);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -31637,7 +31665,7 @@
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(8:0) {#if userId != ''}",
+    		source: "(9:0) {#if userId != ''}",
     		ctx
     	});
 
@@ -31647,6 +31675,8 @@
     function create_fragment$3(ctx) {
     	let h1;
     	let t1;
+    	let h2;
+    	let t3;
     	let if_block_anchor;
 
     	function select_block_type(ctx, dirty) {
@@ -31662,9 +31692,13 @@
     			h1 = element("h1");
     			h1.textContent = "Home component";
     			t1 = space();
+    			h2 = element("h2");
+    			h2.textContent = "Shared Bills";
+    			t3 = space();
     			if_block.c();
     			if_block_anchor = empty();
     			add_location(h1, file$2, 6, 0, 204);
+    			add_location(h2, file$2, 7, 0, 229);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -31672,6 +31706,8 @@
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
     			insert_dev(target, t1, anchor);
+    			insert_dev(target, h2, anchor);
+    			insert_dev(target, t3, anchor);
     			if_block.m(target, anchor);
     			insert_dev(target, if_block_anchor, anchor);
     		},
@@ -31693,6 +31729,8 @@
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h1);
     			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(h2);
+    			if (detaching) detach_dev(t3);
     			if_block.d(detaching);
     			if (detaching) detach_dev(if_block_anchor);
     		}
@@ -32022,6 +32060,8 @@
     }
 
     /* src\App.svelte generated by Svelte v3.24.1 */
+
+    const { console: console_1$3 } = globals;
     const file$4 = "src\\App.svelte";
 
     function create_fragment$5(ctx) {
@@ -32066,18 +32106,18 @@
     			create_component(router.$$.fragment);
     			attr_dev(a0, "class", "text-primaryColor font-semibold hover:text-accentColor");
     			attr_dev(a0, "href", "/home");
-    			add_location(a0, file$4, 21, 1, 566);
+    			add_location(a0, file$4, 22, 1, 626);
     			attr_dev(a1, "class", "text-primaryColor font-semibold hover:text-accentColor");
     			attr_dev(a1, "href", "/login");
-    			add_location(a1, file$4, 22, 1, 665);
+    			add_location(a1, file$4, 23, 1, 725);
     			attr_dev(a2, "class", "text-primaryColor font-semibold hover:text-accentColor");
     			attr_dev(a2, "href", "/token");
-    			add_location(a2, file$4, 23, 1, 766);
+    			add_location(a2, file$4, 24, 1, 826);
     			attr_dev(a3, "class", "text-primaryColor font-semibold hover:text-accentColor");
     			attr_dev(a3, "href", "/create-shared-bill");
-    			add_location(a3, file$4, 24, 1, 867);
+    			add_location(a3, file$4, 25, 1, 927);
     			attr_dev(main, "class", "overflow-hidden");
-    			add_location(main, file$4, 20, 0, 533);
+    			add_location(main, file$4, 21, 0, 593);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -32136,8 +32176,10 @@
     }
 
     function instance$5($$self, $$props, $$invalidate) {
+    	console.log({"env":{"isProd":false,"LOGIN_URL":"https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com","CLIENT_ID":"3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM","CLIENT_SECRET":"1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C","REDIRECT_URI":"http://localhost:5000/#/token","API_VERSION":"49.0","PROXY_URL":"https://shared-bills-proxy.herokuapp.com/prox","BASE_URL":"http://localhost:5000"}}.env.BASE_URL);
+
     	if ("serviceWorker" in navigator) {
-    		navigator.serviceWorker.register("/service-worker.js");
+    		navigator.serviceWorker.register({"env":{"isProd":false,"LOGIN_URL":"https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com","CLIENT_ID":"3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM","CLIENT_SECRET":"1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C","REDIRECT_URI":"http://localhost:5000/#/token","API_VERSION":"49.0","PROXY_URL":"https://shared-bills-proxy.herokuapp.com/prox","BASE_URL":"http://localhost:5000"}}.env.BASE_URL + "/service-worker.js");
     	}
 
     	const routes = {
@@ -32151,7 +32193,7 @@
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$3.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
     	let { $$slots = {}, $$scope } = $$props;

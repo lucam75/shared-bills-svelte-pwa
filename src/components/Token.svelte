@@ -3,13 +3,15 @@
     import jsforce from "../jsforce/jsforce";
     import {push} from 'svelte-spa-router'
 
+    let message = '';
+
     let urlParameters = new URLSearchParams(window.location.search);
     let code = urlParameters.get('code');
     console.log('code ', code);
     
     sfConn.authorize(code, function(err, userInfo) {
         console.log('sfConn.authorize ');
-        if (err) { return console.error("This error is in the auth callback: " + err); }
+        if (err) { message = err; return ''; }
         console.log('Access Token: ' + sfConn.accessToken);
         console.log('Instance URL: ' + sfConn.instanceUrl);
         console.log('refreshToken: ' + sfConn.refreshToken);
@@ -24,3 +26,5 @@
     });
 </script>
 <h1>Token component</h1>
+<p>Code: {code}</p>
+<p>{message}</p>
