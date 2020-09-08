@@ -11,7 +11,6 @@
 		"serve": "sirv dist",
 		"serve:dev": "sirv dist --dev",
 		"dev": "run-p build:auto serve:dev watch:tailwind",
-		"now-build": "rollup -c",
 		"start": "sirv public -s"
 	},
 	"repository": {

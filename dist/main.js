@@ -32078,13 +32078,15 @@
     	let a3;
     	let link_action_3;
     	let t7;
+    	let h1;
+    	let t9;
     	let router;
     	let current;
     	let mounted;
     	let dispose;
 
     	router = new Router({
-    			props: { routes: /*routes*/ ctx[0] },
+    			props: { routes: /*routes*/ ctx[1] },
     			$$inline: true
     		});
 
@@ -32103,21 +32105,26 @@
     			a3 = element("a");
     			a3.textContent = "CreateSharedBill";
     			t7 = space();
+    			h1 = element("h1");
+    			h1.textContent = `${/*baseUrl*/ ctx[0]}`;
+    			t9 = space();
     			create_component(router.$$.fragment);
     			attr_dev(a0, "class", "text-primaryColor font-semibold hover:text-accentColor");
     			attr_dev(a0, "href", "/home");
-    			add_location(a0, file$4, 22, 1, 626);
+    			add_location(a0, file$4, 23, 1, 664);
     			attr_dev(a1, "class", "text-primaryColor font-semibold hover:text-accentColor");
     			attr_dev(a1, "href", "/login");
-    			add_location(a1, file$4, 23, 1, 725);
+    			add_location(a1, file$4, 24, 1, 763);
     			attr_dev(a2, "class", "text-primaryColor font-semibold hover:text-accentColor");
     			attr_dev(a2, "href", "/token");
-    			add_location(a2, file$4, 24, 1, 826);
+    			add_location(a2, file$4, 25, 1, 864);
     			attr_dev(a3, "class", "text-primaryColor font-semibold hover:text-accentColor");
     			attr_dev(a3, "href", "/create-shared-bill");
-    			add_location(a3, file$4, 25, 1, 927);
+    			add_location(a3, file$4, 26, 1, 965);
+    			attr_dev(h1, "class", "text-secondaryColor font-bold ");
+    			add_location(h1, file$4, 27, 1, 1090);
     			attr_dev(main, "class", "overflow-hidden");
-    			add_location(main, file$4, 21, 0, 593);
+    			add_location(main, file$4, 22, 0, 631);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -32132,6 +32139,8 @@
     			append_dev(main, t5);
     			append_dev(main, a3);
     			append_dev(main, t7);
+    			append_dev(main, h1);
+    			append_dev(main, t9);
     			mount_component(router, main, null);
     			current = true;
 
@@ -32176,6 +32185,7 @@
     }
 
     function instance$5($$self, $$props, $$invalidate) {
+    	let baseUrl = {"env":{"isProd":false,"LOGIN_URL":"https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com","CLIENT_ID":"3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM","CLIENT_SECRET":"1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C","REDIRECT_URI":"http://localhost:5000/#/token","API_VERSION":"49.0","PROXY_URL":"https://shared-bills-proxy.herokuapp.com/prox","BASE_URL":"http://localhost:5000"}}.env.BASE_URL;
     	console.log({"env":{"isProd":false,"LOGIN_URL":"https://cunning-fox-tqgyk9-dev-ed.my.salesforce.com","CLIENT_ID":"3MVG95jctIhbyCprKkuB.DbXd55yOtTF5JrNA.EZ6iG8K_pWiNF7G6EPN_iXEwHdSW83jUE6Kux._DJZ.HihM","CLIENT_SECRET":"1F5E3DA5394BFF18B9DFD9D9D9C1B71C2ECC8E09CA2DB1C6129067653E76C21C","REDIRECT_URI":"http://localhost:5000/#/token","API_VERSION":"49.0","PROXY_URL":"https://shared-bills-proxy.herokuapp.com/prox","BASE_URL":"http://localhost:5000"}}.env.BASE_URL);
 
     	if ("serviceWorker" in navigator) {
@@ -32206,10 +32216,19 @@
     		CreateSharedBill,
     		Router,
     		link,
+    		baseUrl,
     		routes
     	});
 
-    	return [routes];
+    	$$self.$inject_state = $$props => {
+    		if ("baseUrl" in $$props) $$invalidate(0, baseUrl = $$props.baseUrl);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [baseUrl, routes];
     }
 
     class App extends SvelteComponentDev {
