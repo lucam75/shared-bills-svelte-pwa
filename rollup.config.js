@@ -15,9 +15,6 @@ export default {
 		sourcemap: true,
 		name: "app",
 		file: "dist/main.js"
-		/*globals: {
-			"jsforce.js": "jsforce"
-		}*/
 	},
 
 	plugins: [
