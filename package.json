@@ -5,13 +5,13 @@
 	"main": " ",
 	"scripts": {
 		"watch:tailwind": "postcss src/dist/tailwind.css -o dist/tailwind.css -w",
-		"build:tailwind": "postcss src/dist/tailwind.css -o dist/tailwind.css",
-		"build": "npm run build:tailwind && rollup -c",
+		"build:tailwind": "postcss src/dist/tailwind.css -o docs/tailwind.css",
+		"build": "npm run build:tailwind && rollup -c --environment INCLUDE_DEPS,BUILD:production",
 		"build:auto": "npm run build:tailwind && rollup -c -w",
-		"serve": "sirv dist",
+		"serve": "sirv docs",
 		"serve:dev": "sirv dist --dev",
 		"dev": "run-p build:auto serve:dev watch:tailwind",
-		"start": "sirv public -s"
+		"start": "run-p serve build"
 	},
 	"repository": {
 		"type": "git",
