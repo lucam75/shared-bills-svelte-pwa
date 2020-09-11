@@ -1,5 +1,4 @@
 <script>
-    import {location, querystring} from 'svelte-spa-router'
     import { loggedUserId } from "../store/store.js";
     let userId;
     loggedUserId.subscribe(id => (userId = id));

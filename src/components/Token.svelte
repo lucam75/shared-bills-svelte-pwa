@@ -1,7 +1,6 @@
 <script>
     import { oauth2, sfConn, loggedUserId, accessToken, instanceUrl, refreshToken } from "../store/store.js";
     import jsforce from "../jsforce/jsforce";
-    import {push} from 'svelte-spa-router'
 
     let message = '';
 
@@ -22,7 +21,7 @@
         console.log('User ID: ' + userInfo.id);
         console.log('Org ID: ' + userInfo.organizationId);
         
-        window.location = '#/home';
+        window.location = '/';
     });
 </script>
 <h1>Token component</h1>

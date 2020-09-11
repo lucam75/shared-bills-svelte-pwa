@@ -1,2 +1,3 @@
+@layer base{@apply text-primaryColor;@apply font-semibold;@apply "hover:text-accentColor";}
 
 /*# sourceMappingURL=components.css.map */
