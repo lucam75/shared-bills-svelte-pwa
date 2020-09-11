@@ -5,10 +5,10 @@
 	"main": " ",
 	"scripts": {
 		"watch:tailwind": "postcss src/dist/tailwind.css -o dist/tailwind.css -w",
-		"build:tailwind": "postcss src/dist/tailwind.css -o docs/tailwind.css",
+		"build:tailwind": "postcss src/dist/tailwind.css -o dist/tailwind.css",
 		"build": "npm run build:tailwind && rollup -c --environment INCLUDE_DEPS,BUILD:production",
 		"build:auto": "rollup -c -w",
-		"serve": "sirv docs",
+		"serve": "sirv dist --single",
 		"serve:dev": "sirv dist --dev --single",
 		"dev": "run-p build:auto serve:dev watch:tailwind",
 		"start": "run-p serve build"

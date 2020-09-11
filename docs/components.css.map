@@ -1,12 +1,8 @@
 {
   "version": 3,
   "file": "components.css",
-  "sources": [
-    "App.svelte"
-  ],
-  "sourcesContent": [
-    "<script>\r\n\timport Login from './components/Login.svelte';\r\n\timport Token from './components/Token.svelte';\r\n\timport Home from './components/Home.svelte';\r\n\timport CreateSharedBill from './components/CreateSharedBill.svelte';\r\n\timport { Router, Link, Route } from \"svelte-routing\";\r\n\r\n\texport let url = \"\";\r\n\r\n\tlet baseUrl = __myapp.env.BASE_URL;\r\n\tif ('serviceWorker' in navigator) {\r\n\t\tnavigator.serviceWorker.register(__myapp.env.BASE_URL + '/service-worker.js');\r\n\t}\r\n</script>\r\n<style>\r\n\t@layer base{\r\n\t\t.link {\r\n\t\t\t@apply text-primaryColor;\r\n\t\t\t@apply font-semibold;\r\n\t\t\t@apply \"hover:text-accentColor\";\r\n\t\t}\r\n\t}\r\n</style>\r\n\r\n<main class=\"overflow-hidden\">\r\n\t<Router url=\"{url}\">\r\n\t\t<nav>\r\n\t\t  <Link getProps=\"{() => {return {class: \"link\"}}}\" to=\"/\">Home</Link>\r\n\t\t  <Link getProps=\"{() => {return {class: \"link\"}}}\" to=\"login\">Login</Link>\r\n\t\t  <Link getProps=\"{() => {return {class: \"link\"}}}\" to=\"token\">Token</Link>\r\n\t\t  <Link getProps=\"{() => {return {class: \"link\"}}}\" to=\"create-shared-bill\">CreateSharedBill</Link>\r\n\t\t</nav>\r\n\t\t<h1 class=\"text-secondaryColor font-bold \">{baseUrl}</h1>\r\n\t\t<div>\r\n\t\t  <Route path=\"/\" component=\"{Home}\" />\r\n\t\t  <Route path=\"login\" component=\"{Login}\" />\r\n\t\t  <Route path=\"token\" component=\"{Token}\" />\r\n\t\t  <Route path=\"create-shared-bill\" component=\"{CreateSharedBill}\" />\r\n\t\t  <Route path=\"/\"><Home /></Route>\r\n\t\t</div>\r\n\t</Router>\r\n</main>\r\n"
-  ],
+  "sources": [],
+  "sourcesContent": [],
   "names": [],
-  "mappings": "AAeC,OAAO,IAAI,CAAC,AAEV,OAAO,iBAAiB,CAAC,AACzB,OAAO,aAAa,CAAC,AACrB,OAAO,wBAAwB,CAAC,AAElC,CAAC"
+  "mappings": ""
 }
