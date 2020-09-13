@@ -14,7 +14,14 @@
 		if(currentUrl.includes('localhost')) {
 			swLocation = '/service-worker.js';
 		}
-		navigator.serviceWorker.register(swLocation);
+		console.log('Service worker location ', swLocation);
+		navigator.serviceWorker.register(swLocation)
+		.then(function(registration) {
+        	console.log("Service Worker Registered", registration);
+		})
+		.catch(function(err) {
+			console.log("Service Worker Failed to Register", err);
+		})
 	}
 </script>
 <style>
