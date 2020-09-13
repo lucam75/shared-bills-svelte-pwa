@@ -33,16 +33,16 @@
 	<Router url="{url}">
 		<nav>
 			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="/" label="Home"/>
-			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="/Login" label="Login"/>
-			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="/Token" label="Token"/>
-			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="/Create-shared-bill" label="CreateSharedBill"/>
+			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="Login" label="Login"/>
+			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="Token" label="Token"/>
+			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="Create-shared-bill" label="CreateSharedBill"/>
 		</nav>
 		<p>Current url: {url}</p>
 		<div>
 		  <Route path="/" component="{Home}" />
-		  <Route path="/Login" component="{Login}" />
-		  <Route path="/Token" component="{Token}" />
-		  <Route path="/Create-shared-bill" component="{CreateSharedBill}" />
+		  <Route path="Login" component="{Login}" />
+		  <Route path="Token" component="{Token}" />
+		  <Route path="Create-shared-bill" component="{CreateSharedBill}" />
 		  <Route path="/"><Home /></Route>
 		</div>
 	</Router>
