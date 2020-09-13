@@ -2,8 +2,9 @@
 	import Login from './components/Login.svelte';
 	import Token from './components/Token.svelte';
 	import Home from './components/Home.svelte';
+	import Link from './components/_Link.svelte'
 	import CreateSharedBill from './components/CreateSharedBill.svelte';
-	import { Router, Link, Route } from "svelte-routing";
+	import { Router, Route } from "svelte-routing";
 
 	export let url = "";
 
@@ -31,16 +32,17 @@
 <main class="overflow-hidden">
 	<Router url="{url}">
 		<nav>
-		  <Link getProps="{() => {return {class: "text-primaryColor font-semibold hover:text-accentColor"}}}" to="/">Home</Link>
-		  <Link getProps="{() => {return {class: "text-primaryColor font-semibold hover:text-accentColor"}}}" to="login">Login</Link>
-		  <Link getProps="{() => {return {class: "text-primaryColor font-semibold hover:text-accentColor"}}}" to="token">Token</Link>
-		  <Link getProps="{() => {return {class: "text-primaryColor font-semibold hover:text-accentColor"}}}" to="create-shared-bill">CreateSharedBill</Link>
+			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="/" label="Home"/>
+			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="/Login" label="Login"/>
+			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="/Token" label="Token"/>
+			<Link css="text-primaryColor font-semibold hover:text-accentColor" to="/Create-shared-bill" label="CreateSharedBill"/>
 		</nav>
+		<p>Current url: {url}</p>
 		<div>
 		  <Route path="/" component="{Home}" />
-		  <Route path="login" component="{Login}" />
-		  <Route path="token" component="{Token}" />
-		  <Route path="create-shared-bill" component="{CreateSharedBill}" />
+		  <Route path="/Login" component="{Login}" />
+		  <Route path="/Token" component="{Token}" />
+		  <Route path="/Create-shared-bill" component="{CreateSharedBill}" />
 		  <Route path="/"><Home /></Route>
 		</div>
 	</Router>
