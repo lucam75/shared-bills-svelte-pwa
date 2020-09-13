@@ -7,9 +7,14 @@
 
 	export let url = "";
 
-	let baseUrl = __myapp.env.BASE_URL;
+	let currentUrl = window.location.href;
+	let swLocation = '/shared-bills-svelte-pwa/service-worker.js';
+
 	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register(__myapp.env.BASE_URL + '/service-worker.js');
+		if(currentUrl.includes('localhost')) {
+			swLocation = '/service-worker.js';
+		}
+		navigator.serviceWorker.register(swLocation);
 	}
 </script>
 <style>
@@ -24,7 +29,6 @@
 		  <Link getProps="{() => {return {class: "text-primaryColor font-semibold hover:text-accentColor"}}}" to="token">Token</Link>
 		  <Link getProps="{() => {return {class: "text-primaryColor font-semibold hover:text-accentColor"}}}" to="create-shared-bill">CreateSharedBill</Link>
 		</nav>
-		<h1 class="text-secondaryColor font-bold ">{baseUrl}</h1>
 		<div>
 		  <Route path="/" component="{Home}" />
 		  <Route path="login" component="{Login}" />
