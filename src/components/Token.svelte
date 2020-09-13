@@ -21,7 +21,7 @@
         console.log('User ID: ' + userInfo.id);
         console.log('Org ID: ' + userInfo.organizationId);
         
-        window.location = '/';
+        window.location = './';
     });
 </script>
 <h1>Token component</h1>
